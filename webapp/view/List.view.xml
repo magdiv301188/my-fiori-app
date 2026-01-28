@@ -121,9 +121,13 @@
             </header>
         </Column>
 
-       
+       <Column id="colActions" minScreenWidth="Tablet" demandPopin="true">
+            <header>
+                <Text id="colActionsHeader" text="Actions"/>
+            </header>
+        </Column>
 
-        <Column id="colActions" width="3rem" hAlign="End"/>
+       
 
     </columns>
 
