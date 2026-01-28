@@ -1,0 +1,89 @@
+<mvc:View
+    controllerName="resource.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+
+<Page
+    id="pageDetail"
+    title="Create Resource"
+    showNavButton="true"
+    navButtonPress="onNavBack">
+
+    <content>
+
+        <Wizard id="wizCreateResource" height="100%" width="100%"  renderMode="Page" finishButtonText="Create"
+    complete="onFinish" showNextButton="false">
+
+            <!-- Step 1 -->
+            <WizardStep
+                id="stepInfo"
+                title="Resource Info">
+
+                <mvc:XMLView id="viewStepInfo"
+                    viewName="resource.view.detailsteps.StepInfo"/>
+
+            </WizardStep>
+
+
+            <!-- Step 2 -->
+            <WizardStep
+                id="stepAssignment"
+                title="Assignments">
+
+                <mvc:XMLView id="viewStepAssignment"
+                    viewName="resource.view.detailsteps.StepAssignment"/>
+
+            </WizardStep>
+
+
+            <!-- Step 3 -->
+            <WizardStep
+                id="stepCompetency"
+                title="Competencies">
+
+                <mvc:XMLView id="viewStepCompetency"
+                    viewName="resource.view.detailsteps.StepCompetency"/>
+
+            </WizardStep>
+
+
+            <!-- Step 4 -->
+            <WizardStep
+                id="stepService"
+                title="Services">
+
+                <mvc:XMLView id="viewStepService"
+                    viewName="resource.view.detailsteps.StepService"/>
+
+            </WizardStep>
+            
+
+        </Wizard>
+
+    </content>
+
+    <footer>
+
+        <Toolbar id="wizFooter">
+
+            <Button
+                id="btnBack"
+                text="Back"
+                press="onBackStep"/>
+
+            <ToolbarSpacer id="tbSpacer"/>
+
+            <Button
+                id="btnNext"
+                text="Next"
+                type="Emphasized"
+                press="onNextStep"/>
+
+        </Toolbar>
+
+    </footer>
+
+</Page>
+
+</mvc:View>

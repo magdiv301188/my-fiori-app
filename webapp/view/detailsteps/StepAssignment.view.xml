@@ -1,0 +1,37 @@
+<mvc:View
+    controllerName="resource.controller.detailsteps.StepAssignment"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+
+<VBox id="step2" class="sapUiMediumMargin">
+
+    <Title id="step2Title" text="Step 2: Assignment" level="H4"/>
+
+    <f:SimpleForm id="frmAssignment" layout="ResponsiveGridLayout">
+
+        <Label id="lblManager" text="Manager"/>
+        <ComboBox id="cbManager" items="{lookup>/Managers}">
+            <core:Item id="itemManager" key="{lookup>Id}" text="{lookup>Name}"/>
+        </ComboBox>
+
+        <Label id="lblOrgUnit" text="Org Unit"/>
+        <Input id="inpOrgUnit" value="{create>/orgUnit}"/>
+
+        <Label id="step2LblRole" text="Role"/>
+        <Input id="inpRole" value="{create>/role}"/>
+
+    </f:SimpleForm>
+
+    <Toolbar id="tbAssignmentActions" class="sapUiSmallMarginTop" width="100%">
+        <ToolbarSpacer id="tbAssignmentSpacer"/>
+        <Button id="btnSaveAssignment"
+            text="Save"
+            type="Emphasized"
+            press="onSaveAssignment"/>
+    </Toolbar>
+
+</VBox>
+
+</mvc:View>

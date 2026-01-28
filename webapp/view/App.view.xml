@@ -1,0 +1,5 @@
+<mvc:View controllerName="resource.controller.app"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+ <App id="app" height="100%"/>
+</mvc:View>

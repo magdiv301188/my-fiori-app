@@ -1,0 +1,50 @@
+{
+  "Managers": [
+    { "Id": "M001", "Name": "Mike Johnson" },
+    { "Id": "M002", "Name": "Sara Lee" }
+  ],
+
+  "Leads": [
+    { "Id": "L001", "Name": "David Brown" }
+  ],
+
+  "Roles": [
+    { "Id": "DEV", "Name": "Developer" },
+    { "Id": "TST", "Name": "Tester" },
+    { "Id": "CONS", "Name": "Consultant" }
+  ],
+
+  "ResourceTypes": [
+    { "Id": "Internal", "Name": "Internal" },
+    { "Id": "External", "Name": "External" }
+  ],
+
+  "OrgUnits": [
+    { "Id": "OU01", "Name": "IT Department" },
+    { "Id": "OU02", "Name": "Finance" }
+  ],
+
+  "Countries": [
+    { "Id": "IN", "Name": "India" },
+    { "Id": "US", "Name": "USA" }
+  ],
+
+  "Skills": [
+    { "Id": "UI5", "Name": "SAP UI5" },
+    { "Id": "ABAP", "Name": "ABAP" },
+    { "Id": "HANA", "Name": "HANA" }
+  ],
+
+  "Capabilities": [
+    { "Id": "UI5", "Name": "SAP UI5 Capability" }
+  ],
+
+  "Projects": [
+    { "Id": "P100", "Name": "RPM Project" },
+    { "Id": "P200", "Name": "CRM Project" }
+  ],
+
+  "CostCenters": [
+    { "Id": "CC01", "Name": "Cost Center 01" }
+  ]
+}

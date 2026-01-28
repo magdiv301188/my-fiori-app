@@ -1,0 +1,34 @@
+<mvc:View
+    controllerName="resource.controller.detailsteps.StepCompetency"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+
+<VBox id="step3" class="sapUiMediumMargin">
+
+    <Title id="step3Title" text="Step 3: Competencies" level="H4"/>
+
+    <f:SimpleForm id="frmCompetency" layout="ResponsiveGridLayout">
+
+        <Label id="lblPrimarySkill" text="Primary Skill"/>
+        <Input id="inpPrimarySkill" value="{create>/primarySkill}"/>
+
+        <Label id="lblExperience" text="Experience (Years)"/>
+        <Input id="inpExperience" type="Number" value="{create>/experience}"/>
+
+        <Label id="lblCertification" text="Certification"/>
+        <Input id="inpCertification" value="{create>/certification}"/>
+
+    </f:SimpleForm>
+
+    <Toolbar id="tbCompetencyActions" class="sapUiSmallMarginTop" width="100%">
+        <ToolbarSpacer id="tbCompetencySpacer"/>
+        <Button id="btnSaveCompetency"
+            text="Save"
+            type="Emphasized"
+            press="onSaveCompetency"/>
+    </Toolbar>
+
+</VBox>
+
+</mvc:View>

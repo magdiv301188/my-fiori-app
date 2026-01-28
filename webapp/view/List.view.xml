@@ -1,0 +1,192 @@
+<mvc:View
+    controllerName="resource.controller.List"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f">
+
+
+<!-- ================= ROOT ================= -->
+<f:DynamicPage id="dpResources" toggleHeaderOnTitleClick="true" headerExpanded="true">
+
+
+    <!-- ===================================================== -->
+    <!-- FILTER BAR -->
+    <!-- ===================================================== -->
+    <f:header>
+        <f:DynamicPageHeader id="hdrFilters">
+
+            <OverflowToolbar id="tbFilters">
+
+                <Label id="lblSearch" text="Search"/>
+
+                <SearchField
+                    id="sfSearch"
+                    width="20rem"
+                    liveChange="onSearch"
+                    placeholder="Search by name, ID, email..."/>
+
+                <Label
+                    id="lblRole"
+                    text="Manager"
+                    class="sapUiMediumMarginBegin"/>
+
+             <ComboBox
+    id="selRole"
+    width="12rem"
+    placeholder="Select Manager"
+    selectedKey=""
+    items="{lookup>/Managers}"
+    change="onFilterChange">
+
+    <core:Item id="itemRole"
+        key="{lookup>Id}"
+        text="{lookup>Name}" />
+
+</ComboBox>
+
+
+
+                <ToolbarSpacer id="spacerFilters"/>
+
+                <Button
+                    id="btnClearFilters"
+                    text="Clear Filters"
+                    type="Transparent"
+                    press="onClearFilters"/>
+
+            </OverflowToolbar>
+
+        </f:DynamicPageHeader>
+    </f:header>
+
+
+
+    <!-- ===================================================== -->
+    <!-- TITLE + CREATE -->
+    <!-- ===================================================== -->
+    <f:title>
+        <f:DynamicPageTitle id="dpTitleBar">
+
+            <f:heading>
+                <Title
+                    id="ttlResources"
+                    text="{= 'Resources (' + ${main>/Resources}.length + ')' }"
+                    level="H2"/>
+            </f:heading>
+
+            <f:actions>
+                <Button
+                    id="btnCreateResource"
+                    text="Create Resource"
+                    type="Emphasized"
+                    icon="sap-icon://add"
+                    press="onCreate"/>
+            </f:actions>
+
+        </f:DynamicPageTitle>
+    </f:title>
+
+
+
+    <!-- ===================================================== -->
+    <!-- TABLE -->
+    <!-- ===================================================== -->
+    <f:content>
+<Table
+    
+    id="tblResources"
+    items="{main>/Resources}"
+    growing="true"
+    growingScrollToLoad="true"
+    inset="false"
+    width="100%">
+
+    <!-- ================================================= -->
+    <!-- COLUMNS -->
+    <!-- ================================================= -->
+    <columns>
+
+        <Column id="colAvatar" width="4rem"/>
+
+        <Column id="colName" minScreenWidth="Tablet" demandPopin="true">
+            <header>
+                <Text id="colNameHeader" text="Resource"/>
+            </header>
+        </Column>
+
+        <Column id="colRole" minScreenWidth="Tablet" demandPopin="true">
+            <header>
+                <Text id="colRoleHeader" text="Role"/>
+            </header>
+        </Column>
+
+       
+
+        <Column id="colActions" width="3rem" hAlign="End"/>
+
+    </columns>
+
+
+    <!-- ================================================= -->
+    <!-- ROW -->
+    <!-- ================================================= -->
+    <items>
+
+        <ColumnListItem
+            id="cliResourceItem"
+            type="Active"
+            press="onItemPress">
+
+            <cells>
+
+                <!-- Avatar -->
+                <Avatar
+                    id="cellAvatar"
+                    displayShape="Circle"
+                    displaySize="S"
+                    initials="{main>INITIALS}"/>
+
+
+                <!-- Name -->
+                <VBox id="cellNameBox">
+                    <Title
+                        id="cellName"
+                         level="H4"
+                        text="{main>DISPLAYNAME}"/>
+                        <Text
+                            id="cellDates"
+                            text="{main>DISPLAYDATES}"/>
+                </VBox>
+
+
+                <!-- Role -->
+                <Text
+                    id="cellRole"
+                    text="{main>ROLE}"/>
+
+
+
+                <!-- Menu -->
+                <Button
+                    id="btnRowActions"
+                    icon="sap-icon://overflow"
+                    type="Transparent"
+                    press="onActionMenuPress"/>
+
+            </cells>
+
+        </ColumnListItem>
+
+    </items>
+
+</Table>
+
+
+    </f:content>
+
+
+</f:DynamicPage>
+
+
+</mvc:View>

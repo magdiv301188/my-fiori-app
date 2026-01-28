@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+        <Schema Namespace="ResourceService" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            
+            <EntityType Name="Resource">
+                <Key>
+                    <PropertyRef Name="XMUID"/>
+                </Key>
+                <Property Name="XMUID" Type="Edm.String" Nullable="false" sap:label="Resource ID" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="UNAME" Type="Edm.String" Nullable="true" sap:label="Username" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="FNAME" Type="Edm.String" Nullable="true" sap:label="First Name" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="LNAME" Type="Edm.String" Nullable="true" sap:label="Last Name" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="ADSEX" Type="Edm.String" Nullable="true" sap:label="Gender" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="CELL" Type="Edm.String" Nullable="true" sap:label="Cell Phone" sap:filterable="false" sap:sortable="false"/>
+                <Property Name="EMAIL" Type="Edm.String" Nullable="true" sap:label="Email" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="BEGDA" Type="Edm.DateTime" Nullable="true" sap:label="Start Date" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="ENDDA" Type="Edm.DateTime" Nullable="true" sap:label="End Date" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="RSTYP" Type="Edm.String" Nullable="true" sap:label="Resource Type" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="ROLE" Type="Edm.String" Nullable="true" sap:label="Role" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="SKTYP" Type="Edm.String" Nullable="true" sap:label="Skill Type" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="MMUID" Type="Edm.String" Nullable="true" sap:label="Manager ID" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="LMUID" Type="Edm.String" Nullable="true" sap:label="Lead ID" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="ORGU" Type="Edm.String" Nullable="true" sap:label="Organization" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="LAND1" Type="Edm.String" Nullable="true" sap:label="Country" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="ORTNAME" Type="Edm.String" Nullable="true" sap:label="Location" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="KOSTL" Type="Edm.String" Nullable="true" sap:label="Cost Center" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="AUFNR" Type="Edm.String" Nullable="true" sap:label="Order" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="CAPABILITY" Type="Edm.String" Nullable="true" sap:label="Capability" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="PRMSKILL" Type="Edm.String" Nullable="true" sap:label="Primary Skill" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="SECSKILL" Type="Edm.String" Nullable="true" sap:label="Secondary Skill" sap:filterable="true" sap:sortable="true"/>
+                <Property Name="NOTES" Type="Edm.String" Nullable="true" sap:label="Notes" sap:filterable="false" sap:sortable="false"/>
+            </EntityType>
+            
+            <EntityContainer Name="ResourceServiceEntities" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="Resources" EntityType="ResourceService.Resource"/>
+            </EntityContainer>
+            
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

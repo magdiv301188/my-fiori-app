@@ -1,0 +1,165 @@
+<mvc:View
+    controllerName="resource.controller.detailsteps.StepInfo"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    
+
+<VBox id="stepInfoRootBox"  width="100%">
+
+
+    <!-- ================================================= -->
+    <!-- HEADER -->
+    <!-- ================================================= -->
+
+    <HBox id="stepInfoHeaderBox" justifyContent="End">
+        <Button id="stepInfoBtnEdit" text="Edit" icon="sap-icon://edit" press="onEditInfo"/>
+    </HBox>
+ 
+
+
+
+    <!-- ================================================= -->
+    <!-- SECTION 1 : PERSONAL INFO -->
+    <!-- ================================================= -->
+    <Panel
+        id="stepInfoPanelPersonal"
+        headerText="Personal Information"
+        expandable="true"
+        expanded="true"
+        class="sapUiMediumMarginTop">
+
+        <f:SimpleForm
+            id="stepInfoFormPersonal"
+            layout="ResponsiveGridLayout"
+            editable="false"
+            columnsL="2"
+            columnsM="1">
+
+            <Label id="lblXMUID" text="Resource ID"/>
+            <Text id="txtXMUID" text="{path:'create>/XMUID', formatter: '.formatValue'}"/>
+
+            <Label id="lblFName" text="First Name"/>
+            <Text id="txtFName" text="{path:'create>/FNAME', formatter: '.formatValue'}"/>
+
+            <Label id="lblLName" text="Last Name"/>
+            <Text id="txtLName" text="{path:'create>/LNAME', formatter: '.formatValue'}"/>
+
+            <Label id="lblGender" text="Gender"/>
+            <Text id="txtGender" text="{path:'create>/ADSEX', formatter: '.formatValue'}"/>
+
+        </f:SimpleForm>
+
+    </Panel>
+
+
+
+    <!-- ================================================= -->
+    <!-- SECTION 2 : ORGANIZATION -->
+    <!-- ================================================= -->
+    <Panel
+        id="stepInfoPanelOrg"
+        headerText="Organization Details"
+        expandable="true"
+        expanded="true"
+        class="sapUiSmallMarginTop">
+
+        <f:SimpleForm
+            id="stepInfoFormOrg"
+            layout="ResponsiveGridLayout"
+            editable="false"
+            columnsL="2"
+            columnsM="1">
+
+            <Label id="lblManagerInfo" text="Manager"/>
+            <Text id="txtManager" text="{path:'create>/MMUID', formatter: '.formatValue'}"/>
+
+            <Label id="lblOrgUnitInfo" text="Org Unit"/>
+            <Text id="txtOrgUnit" text="{path:'create>/ORGUN', formatter: '.formatValue'}"/>
+
+            <Label id="lblRoleInfo" text="Role"/>
+            <Text id="txtRole" text="{path:'create>/ROLE', formatter: '.formatValue'}"/>
+
+            <Label id="lblCostCenterInfo" text="Cost Center"/>
+            <Text id="txtCostCenter" text="{path:'create>/KOSTL', formatter: '.formatValue'}"/>
+
+            <Label id="lblStartDateInfo" text="Start Date"/>
+            <Text id="txtStartDate" text="{path:'create>/BEGDA', formatter: '.formatValue'}"/>
+
+            <Label id="lblEndDateInfo" text="End Date"/>
+            <Text id="txtEndDate" text="{path:'create>/ENDDA', formatter: '.formatValue'}"/>
+
+        </f:SimpleForm>
+
+    </Panel>
+
+
+
+    <!-- ================================================= -->
+    <!-- SECTION 3 : SKILLS -->
+    <!-- ================================================= -->
+    <Panel
+        id="stepInfoPanelSkills"
+        headerText="Skills  Capability"
+        expandable="true"
+        expanded="true"
+        class="sapUiSmallMarginTop">
+
+        <f:SimpleForm
+            id="stepInfoFormSkills"
+            layout="ResponsiveGridLayout"
+            editable="false"
+            columnsL="2"
+            columnsM="1">
+
+            <Label id="lblCapability" text="Capability"/>
+            <Text id="txtCapability" text="{path:'create>/CAPABILITY', formatter: '.formatValue'}"/>
+
+            <Label id="lblPrimarySkillInfo" text="Primary Skill"/>
+            <Text id="txtPrimarySkill" text="{path:'create>/PRMSKILL', formatter: '.formatValue'}"/>
+
+            <Label id="lblSecondarySkillInfo" text="Secondary Skill"/>
+            <Text id="txtSecondarySkill" text="{path:'create>/SECSKILL', formatter: '.formatValue'}"/>
+
+        </f:SimpleForm>
+
+    </Panel>
+
+
+
+    <!-- ================================================= -->
+    <!-- SECTION 4 : CONTACT -->
+    <!-- ================================================= -->
+    <Panel
+        id="stepInfoPanelContact"
+        headerText="Contact Details"
+        expandable="true"
+        expanded="true"
+        class="sapUiSmallMarginTop">
+
+        <f:SimpleForm
+            id="stepInfoFormContact"
+            layout="ResponsiveGridLayout"
+            editable="false"
+            columnsL="2"
+            columnsM="1">
+
+            <Label id="lblEmail" text="Email"/>
+            <Text id="txtEmail" text="{path:'create>/EMAIL', formatter: '.formatValue'}"/>
+
+            <Label id="lblPhone" text="Telephone"/>
+            <Text id="txtPhone" text="{path:'create>/CELL', formatter: '.formatValue'}"/>
+
+            <Label id="lblSapUser" text="SAP User ID"/>
+            <Text id="txtSapUser" text="{path:'create>/UNAME', formatter: '.formatValue'}"/>
+
+            <Label id="lblNotes" text="Notes"/>
+            <Text id="txtNotes" text="{path:'create>/NOTES', formatter: '.formatValue'}"/>
+
+        </f:SimpleForm>
+
+    </Panel>
+
+
+</VBox>
+</mvc:View>
